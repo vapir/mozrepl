@@ -133,7 +133,7 @@ function onSocketAccepted(serv, transport) {
         outstream.close();
         sessions.remove(session);
     };
-    session.init({});
+    session.init({'replSession': session, 'server': this, 'mostRecentWindow': context});
 
     log('I, MOZREPL : Client connected : ' + transport.host + ':' + transport.port +
         ' : ' + (context instanceof Ci.nsIDOMWindow ?
