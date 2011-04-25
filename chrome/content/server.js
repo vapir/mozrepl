@@ -129,7 +129,7 @@ function onSocketAccepted(serv, transport) {
         outstream.close();
         sessions.remove(session);
     };
-    session.init(context);
+    session.init({});
 
     log('I, MOZREPL : Client connected : ' + transport.host + ':' + transport.port +
         ' : ' + (context instanceof Ci.nsIDOMWindow ?
